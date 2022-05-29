@@ -6,16 +6,23 @@
   padding: 0;
   border: 0;
   outline: 0;
+  line-height: 1.5;
+  outline: none;
   box-sizing: border-box;
   scroll-behavior: smooth;
   text-decoration: none;
+}
+
+::before,
+::after {
+  box-sizing: border-box;
 }
 
 body {
   color: $bgcolor-main;
   width: 100%;
   line-height: 1.8;
-  font-family: $roboto-font
+  font-family: $roboto-font;
 }
 
 .container {
@@ -23,10 +30,14 @@ body {
   margin: 0, auto;
 }
 
-h1 ,h2 ,h3 ,h4 ,h5 {
-  font-weight:500;
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 500;
 }
 
 h1 {
-  font-size:2.5rem;
+  font-size: 2.5rem;
 }
