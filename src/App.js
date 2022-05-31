@@ -1,13 +1,12 @@
-import Canvas from './components/canvas/Canvas';
+import Home from './components/home/Home';
+import Header from './components/header/Header';
+import { Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
-    <>
-      <div className="main-container">
-        <aside className="main-aside"></aside>
-      </div>
-      <div className="main-content"></div>
-    </>
+      <Routes>
+       <Route path="/" element={<Home />} />
+      </Routes>
   );
 }
 

@@ -1,7 +1,11 @@
-$league-font: 'League Spartan', sans-serif;
-$montserrat-font: 'Montserrat', sans-serif;
-$raleway-font: 'Raleway', sans-serif;
-$roboto-font: 'Roboto Slab', serif;
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;300;500;700&family=Montserrat:wght@100;200;300;400;500;700&family=Open+Sans:wght@300;400;500;700&family=Raleway:wght@100;300;400;500&family=Roboto+Slab:wght@100;300;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;700&display=swap');
+
+$font-league: 'League Spartan', sans-serif;
+$font-montserrat: 'Montserrat', sans-serif;
+$font-raleway: 'Raleway', sans-serif;
+$font-roboto: 'Roboto Slab', serif;
+$font-dancing: 'Dancing Script', cursive;
 
 $container-width-lg: 75%;
 $container-width-md: 86%;
@@ -13,3 +17,4 @@ $bg-black-100: #fdf9ff;
 $bg-black-50: #e8dfec;
 $text-black-900: #302e4d;
 $text-black-900: #504e70;
+$text-skin: #FC766AFF;

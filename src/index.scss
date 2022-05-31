@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;300;500;700&family=Montserrat:wght@100;200;300;400;500;700&family=Open+Sans:wght@300;400;500;700&family=Raleway:wght@100;300;400;500&family=Roboto+Slab:wght@100;300;500;700&display=swap');
+
 @import './variables/variables';
 
 * {
@@ -11,6 +11,7 @@
   box-sizing: border-box;
   scroll-behavior: smooth;
   text-decoration: none;
+  color: black;
 }
 
 ::before,
@@ -19,10 +20,9 @@
 }
 
 body {
-  color: $bgcolor-main;
   width: 100%;
   line-height: 1.8;
-  font-family: $roboto-font;
+  font-family: $font-roboto;
 }
 
 .container {
@@ -41,3 +41,14 @@ h5 {
 h1 {
   font-size: 2.5rem;
 }
+
+.section {
+  background-color: $bg-black-900;
+  min-height: 100vh;
+  position: fixed;
+  left: 270px;
+  top: 0;
+  right: 0;
+  z-index: 0;
+}
+
