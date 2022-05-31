@@ -1,1 +1,55 @@
 @import 'src/variables/variables';
+
+.home-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  color: $text-black-900
+}
+
+.home-img img {
+  height:300px;
+  border-radius: 50px;
+}
+
+.home-info {
+  flex: 0 0 60%;
+  max-width: 60%;
+  z-index: 1;
+}
+
+.home-img {
+flex: 0 0 40%;
+max-width: 40%;
+text-align: center;
+
+}
+
+.hello {
+  font-size: 28px;
+  margin: 15px 0;
+  word-spacing: 2px;
+}
+
+.hello span {
+  font-family: $font-dancing;
+  font-size: 30px;
+  font-weight: 700;
+  color: $text-skin
+}
+
+.my-profession {
+  font-size: 30px;
+  margin: 15px 0;
+}
+
+.typing {
+  color: $text-skin
+}
+
+.home-info p {
+
+  margin-bottom: 70px;
+  font-size: 18px;
+  color: $text-black-700
+}

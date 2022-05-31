@@ -1,42 +1,42 @@
 import { NavLink } from 'react-router-dom';
-import { FaUserAlt, FaClipboardList, FaBriefcase, FaHome } from 'react-icons/fa';
-import './header.scss'
+import { FaUserAlt, FaClipboardList, FaBriefcase, FaHome, FaBars } from 'react-icons/fa';
+import './header.scss';
 
 const Header = () => {
   return (
     <header className="aside">
       <div className="logo">
-      <NavLink to="/">
+        <NavLink to="/">
           <span>Z</span>
           eeshan
-      </NavLink>
+        </NavLink>
       </div>
-
-      <div>
+      <div className="nav-toggler">
+        <FaBars className="hamburger"/>
+      </div>
 
       <nav>
         <ul className="nav-list">
           <li>
             <NavLink to="">
-              <FaHome className="nav-icon"/> Home
+              <FaHome className="nav-icon" /> Home
             </NavLink>
-            </li>
-               <li>
+          </li>
+          <li>
             <NavLink to="">
               <FaUserAlt className="nav-icon" /> About
             </NavLink>
-            </li>
-               <li>
+          </li>
+          <li>
             <NavLink to="">
               <FaClipboardList className="nav-icon" /> Services
             </NavLink>
-            </li>
-               <li>
+          </li>
+          <li>
             <NavLink to="">
               <FaBriefcase className="nav-icon" /> Porfolio
             </NavLink>
-            </li>
-          
+          </li>
         </ul>
       </nav>
     </header>

@@ -68,6 +68,23 @@
  margin-bottom: 70px;
 }
 
+.nav-toggler {
+  height: 40px;
+  width:45px;
+  border: 1px solid $bg-black-50;
+  cursor: pointer;
+  position: fixed;
+  left:300px;
+  top:20px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.hamburger {
+  fill: $text-skin;
+}
+
 .nav-list {
   display: flex;
   flex-direction: column;

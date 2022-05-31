@@ -74,7 +74,7 @@ const Canvas = () => {
 
   const animate = () => {
     window.requestAnimationFrame(animate);
-    context.fillStyle = 'rgba(26, 26, 64, 0.04)';
+    context.fillStyle = 'rgba(242, 242, 252, 0.04)';
     context.fillRect(0, 0, canvas.width, canvas.height);
 
     particles.forEach((particle) => {
