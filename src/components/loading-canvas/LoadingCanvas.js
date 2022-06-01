@@ -2,16 +2,16 @@
 /* eslint-disable react/no-this-in-sfc */
 import { useRef, useEffect } from 'react';
 import { randomColor, randomIntFromRange } from '../../utils/utils';
-import './canvas.scss';
 
-const Canvas = () => {
+
+const LoadingCanvas = () => {
   const canvasRef = useRef(null);
 
   let canvas;
   let context;
 
   const mouse = {
-    x: (window.innerWidth) * (3 / 4),
+    x: window.innerWidth * (3 / 4),
     y: window.innerHeight / 2,
   };
 
@@ -67,7 +67,7 @@ const Canvas = () => {
     for (let i = 0; i < 200; i += 1) {
       const radius = 2 * Math.random() + 3;
       particles.push(
-        new Particle((canvas.width) * (3 / 4), canvas.height / 2, radius, randomColor(colors)),
+        new Particle(canvas.width * (3 / 4), canvas.height / 2, radius, randomColor(colors)),
       );
     }
   };
@@ -99,4 +99,4 @@ const Canvas = () => {
   return <canvas onMouseMove={handleMousMmove} ref={canvasRef} />;
 };
 
-export default Canvas;
+export default LoadingCanvas;
