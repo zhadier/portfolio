@@ -1,15 +1,16 @@
-@import 'src/variables/variables';
+@use "../../variables/variables" as *;
 
 .home-section {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  color: $text-black-900
+  color: $text-black-900;
 }
 
 .home-img img {
-  height:300px;
-  border-radius: 50px;
+  height: 300px;
+  border-radius: 30px;
+  margin: auto;
 }
 
 .home-info {
@@ -18,11 +19,33 @@
 }
 
 .home-img {
-flex: 0 0 40%;
-max-width: 40%;
-text-align: center;
-
+  flex: 0 2 40%;
+  max-width: 40%;
+  position: relative;
+  text-align: center;
 }
+
+// .home-img::before {
+//   content: "";
+//   position: absolute;
+//   left: -20px;
+//   top: -40px;
+//   border-top: 10px solid $text-skin;
+//   border-left: 10px solid $text-skin;
+//   height: 80px;
+//   width: 80px;
+// }
+
+// .home-img::after {
+//   content: "";
+//   position: absolute;
+//   right: -20px;
+//   bottom: -40px;
+//   border-bottom: 10px solid $text-skin;
+//   border-right: 10px solid $text-skin;
+//   height: 80px;
+//   width: 80px;
+// }
 
 .hello {
   font-size: 28px;
@@ -34,7 +57,7 @@ text-align: center;
   font-family: $font-dancing;
   font-size: 30px;
   font-weight: 700;
-  color: $text-skin
+  color: $text-skin;
 }
 
 .my-profession {
@@ -43,12 +66,11 @@ text-align: center;
 }
 
 .typing {
-  color: $text-skin
+  color: $text-skin;
 }
 
 .home-info p {
-
   margin-bottom: 70px;
   font-size: 18px;
-  color: $text-black-700
+  color: $text-black-700;
 }

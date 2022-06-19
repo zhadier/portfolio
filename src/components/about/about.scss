@@ -1,0 +1,237 @@
+@use "../../variables/variables" as *;
+
+.section-title {
+  flex: 0 0 100%;
+  max-width: 100%;
+  margin-bottom: 60px;
+
+  h2 {
+    font-size: 40px;
+    font-weight: 500;
+    position: relative;
+
+    &::before {
+      content: "";
+      height: 4px;
+      width: 50px;
+      background-color: $text-skin;
+      position: absolute;
+      top: 100%;
+      left: 0;
+    }
+
+    &::after {
+      content: "";
+      height: 4px;
+      width: 25px;
+      background-color: $text-skin;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      margin-top: 8px;
+    }
+  }
+}
+
+.about {
+  .container {
+    padding-top: 60px;
+    padding-bottom: 70px;
+  }
+
+  .about-content {
+    flex: 0 0 100%;
+    max-width: 100%;
+
+    .about-text {
+      h3 {
+        font-size: 24px;
+        margin-bottom: 15px;
+        font-weight: 700;
+        color: $text-black-900;
+
+        span {
+          color: $text-skin;
+        }
+      }
+
+      p {
+        font-size: 16px;
+        line-height: 25px;
+        color: $text-black-700;
+      }
+
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+
+    .personal-info {
+      flex: 0 0 60%;
+      max-width: 60%;
+      margin-top: 40px;
+
+      .info-item {
+        flex: 0 0 45%;
+        max-width: 45%;
+        margin-right: 5px;
+
+        p {
+          font-weight: 600;
+          padding: 10px 0;
+          font-size: 16px;
+          color: $text-black-900;
+          border-bottom: 1px solid $bg-black-50;
+
+          span {
+            font-weight: normal;
+            color: $text-black-700;
+            margin-left: 5px;
+            display: inline-block;
+          }
+        }
+      }
+
+      .buttons {
+        margin-top: 50px;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+
+        .btn {
+          margin-top: 10px;
+          margin-right: 15px;
+        }
+      }
+    }
+
+    .skills {
+      flex: 0 0 40%;
+      max-width: 40%;
+      margin-top: 40px;
+
+      .skill-item {
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin-bottom: 25px;
+
+        h3 {
+          line-height: 40px;
+          font-weight: 600;
+          font-size: 16px;
+          color: $text-black-900;
+          text-transform: capitalize;
+        }
+
+        .progress {
+          background-color: $bg-black-50;
+          height: 7px;
+          border-radius: 4px;
+          width: 100%;
+          position: relative;
+
+          .progress-in {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            border-radius: 4px;
+            background-color: $text-skin;
+          }
+        }
+
+        .skill-percent {
+          position: absolute;
+          right: 0;
+          color: $text-black-900;
+          top: -40px;
+          font-weight: 400;
+          line-height: 40px;
+        }
+      }
+    }
+
+    .title {
+      font-size: 24px;
+      margin-bottom: 30px;
+      font-weight: 700;
+      color: $text-black-900;
+    }
+
+    .timeline-box {
+      flex: 0 0 100%;
+      max-width: 100%;
+
+      .timeline {
+        background-color: $bg-black-100;
+        padding: 30px 15px;
+        border: 1px solid $bg-black-50;
+        border-radius: 10px;
+        width: 100%;
+        position: relative;
+
+        .timeline-item {
+          position: relative;
+          padding-left: 37px;
+          padding-bottom: 50px;
+
+          &::before {
+            content: "";
+            width: 1px;
+            position: absolute;
+            height: 100%;
+            left: 7px;
+            top: 0;
+            background-color: $text-skin;
+          }
+
+          &:last-child {
+            padding-bottom: 0;
+          }
+
+          .circle-dot {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 15px;
+            width: 15px;
+            border-radius: 50%;
+            background-color: $text-skin;
+          }
+
+          .timeline-title {
+            font-weight: 700;
+            font-size: 18px;
+            margin-bottom: 15px;
+            text-transform: capitalize;
+            color: $text-black-900;
+          }
+
+          .timeline-text {
+            line-height: 25px;
+            font-size: 16px;
+            text-align: justify;
+            color: $text-black-700;
+          }
+
+          .timeline-date {
+            font-weight: 400;
+            font-size: 14px;
+            margin-bottom: 12px;
+            color: $text-black-700;
+
+            .fa {
+              margin-right: 5px;
+            }
+          }
+        }
+      }
+    }
+
+    .education,
+    .experience {
+      flex: 0 0 50%;
+      max-width: 50%;
+      margin-top: 30px;
+    }
+  }
+}

@@ -1,4 +1,4 @@
-@import './variables/variables';
+@use "./variables/variables" as *;
 
 * {
   margin: 0;
@@ -6,7 +6,6 @@
   border: 0;
   outline: 0;
   line-height: 1.5;
-  outline: none;
   box-sizing: border-box;
   scroll-behavior: smooth;
   text-decoration: none;
@@ -37,6 +36,14 @@ h1 {
   font-size: 2.5rem;
 }
 
+.main-content {
+  padding-left: 270px;
+}
+
+.hidden {
+  display: none !important;
+}
+
 canvas {
   position: fixed;
   z-index: -1;
@@ -46,21 +53,17 @@ canvas {
 section {
   background-color: $bg-black-900;
   min-height: 100vh;
-  position: fixed;
-  left: 270px;
   top: 0;
   right: 0;
-  padding: 0 30px;
+  padding: 0 50px;
 }
 
 .padd-15 {
   padding: 0 15px;
 }
 
-.container {
-  max-width: 1100px;
-  width: 100%;
-  margin: auto;
+.shadow-dark {
+  box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
 }
 
 .row {
@@ -89,7 +92,7 @@ section {
 
 .btn::before,
 .btn::after {
-  content: '';
+  content: "";
   position: absolute;
   transition: inherit;
   z-index: -1;
@@ -103,28 +106,28 @@ section {
   transition-delay: 0.5s;
 }
 
-.btn:before {
+.btn::before {
   bottom: 0;
   border: 1px solid black;
   border-top: 0;
   border-bottom: 0;
 }
 
-.btn:after {
+.btn::after {
   top: 0;
   height: 0;
 }
 
-.btn:hover:before,
-.btn:hover:after {
+.btn:hover::before,
+.btn:hover::after {
   height: 100%;
 }
 
-.btn:hover:before {
+.btn:hover::before {
   transition-delay: 0s;
 }
 
-.btn:hover:after {
+.btn:hover::after {
   background: black;
   transition-delay: 0.35s;
 }
