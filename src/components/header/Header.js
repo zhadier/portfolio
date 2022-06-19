@@ -1,6 +1,12 @@
-import { NavLink } from 'react-router-dom';
-import { FaUserAlt, FaClipboardList, FaBriefcase, FaHome, FaBars } from 'react-icons/fa';
-import './header.scss';
+import { NavLink } from "react-router-dom";
+import {
+  FaUserAlt,
+  FaClipboardList,
+  FaBriefcase,
+  FaHome,
+  FaBars,
+} from "react-icons/fa";
+import "./header.scss";
 
 const Header = () => {
   return (
@@ -12,28 +18,28 @@ const Header = () => {
         </NavLink>
       </div>
       <div className="nav-toggler">
-        <FaBars className="hamburger"/>
+        <FaBars className="hamburger" />
       </div>
 
       <nav>
         <ul className="nav-list">
           <li>
-            <NavLink to="">
+            <NavLink to="/">
               <FaHome className="nav-icon" /> Home
             </NavLink>
           </li>
           <li>
-            <NavLink to="">
+            <NavLink to="/About">
               <FaUserAlt className="nav-icon" /> About
             </NavLink>
           </li>
           <li>
-            <NavLink to="">
+            <NavLink to="/Services">
               <FaClipboardList className="nav-icon" /> Services
             </NavLink>
           </li>
           <li>
-            <NavLink to="">
+            <NavLink to="/Portfolio">
               <FaBriefcase className="nav-icon" /> Porfolio
             </NavLink>
           </li>

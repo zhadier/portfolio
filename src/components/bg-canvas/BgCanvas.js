@@ -1,7 +1,7 @@
 /* eslint-disable no-param-reassign */
 /* eslint-disable react/no-this-in-sfc */
-import { useRef, useEffect } from 'react';
-import { randomColor, randomIntFromRange } from '../../utils/utils';
+import { useRef, useEffect } from "react";
+import { randomColor, randomIntFromRange } from "../../utils/utils";
 
 const BgCanvas = () => {
   const canvasRef = useRef(null);
@@ -12,7 +12,7 @@ const BgCanvas = () => {
   const alpha = useRef(1);
   const radians = useRef(0);
 
-  const colors = ['#541690', '#FF4949', '#FF8D29', '#FFCD38'];
+  const colors = ["#541690", "#FF4949", "#FF8D29", "#FFCD38"];
 
   // particle
   class Particle {
@@ -55,10 +55,10 @@ const BgCanvas = () => {
 
   const animate = () => {
     window.requestAnimationFrame(animate);
-    context.fillStyle = `rgba(242, 242, 252, ${alpha.current})`;
+    context.fillStyle = `rgba(255, 255, 255, ${alpha.current})`;
     context.fillRect(0, 0, canvas.width, canvas.height);
     context.save();
-    context.translate(canvas.width * 6 / 10, canvas.height / 2);
+    context.translate((canvas.width * 6) / 10, canvas.height / 2);
     context.rotate(radians.current);
     particles.forEach((particle) => {
       particle.update();
@@ -83,19 +83,25 @@ const BgCanvas = () => {
 
   useEffect(() => {
     canvas = canvasRef.current;
-    context = canvas.getContext('2d');
+    context = canvas.getContext("2d");
     const handleResize = () => {
       canvas.height = window.innerHeight;
       canvas.width = window.innerWidth;
     };
     handleResize();
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
     init();
     animate();
-    return () => window.removeEventListener('resize', handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, [animate]);
 
-  return <canvas onMouseDown={handleMouseDown} onMouseUp={handleMouseUp} ref={canvasRef} />;
+  return (
+    <canvas
+      onMouseDown={handleMouseDown}
+      onMouseUp={handleMouseUp}
+      ref={canvasRef}
+    />
+  );
 };
 
 export default BgCanvas;
