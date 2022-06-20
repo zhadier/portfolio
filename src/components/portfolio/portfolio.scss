@@ -1,0 +1,49 @@
+@use "../../variables/variables" as *;
+
+.portfolio {
+  .container {
+    padding-top: 60px;
+    padding-bottom: 40px;
+  }
+
+  .portfolio-heading {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 40px;
+
+    h2 {
+      color: $text-black-900;
+      font-weight: 500;
+    }
+  }
+
+  .portfolio-item {
+    flex: 0 0 33.33%;
+    max-width: 33.33%;
+    margin-bottom: 30px;
+
+    @include mq("lg", "max") {
+      flex: 0 0 50%;
+      max-width: 50%;
+    }
+
+    @include mq("md", "max") {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+
+    .portfolio-item-inner {
+      border: 6px solid $bg-black-100;
+      border-radius: 10px;
+      overflow: hidden;
+      cursor: pointer;
+
+      .portfolio-img {
+        img {
+          width: 100%;
+          display: block;
+        }
+      }
+    }
+  }
+}

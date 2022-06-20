@@ -1,6 +1,6 @@
 @import "src/variables/variables";
 
-.aside {
+header {
   width: 270px;
   background-color: $bg-black-100;
   position: fixed;
@@ -15,7 +15,17 @@
   justify-content: center;
   align-items: center;
   border-right: 2px solid $bg-black-50;
-  border-radius: 0px 20px 20px 0px;
+  border-radius: 0 20px 20px 0;
+  transition: left 0.5s ease-in-out;
+
+  @include mq("xl", "max") {
+    left: -270px;
+    margin-left: 0;
+  }
+}
+
+.aside.open {
+  left: 0;
 }
 
 .logo {
@@ -67,16 +77,18 @@
 }
 
 .nav-toggler {
-  height: 40px;
-  width: 45px;
-  border: 1px solid $bg-black-50;
   cursor: pointer;
   position: fixed;
-  left: 300px;
+  left: 30px;
   top: 20px;
-  display: none;
   justify-content: center;
   align-items: center;
+  display: none;
+  transition: left 2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+  @include mq("xl", "max") {
+    display: inline-block;
+  }
 }
 
 .hamburger {

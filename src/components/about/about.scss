@@ -1,38 +1,5 @@
 @use "../../variables/variables" as *;
 
-.section-title {
-  flex: 0 0 100%;
-  max-width: 100%;
-  margin-bottom: 60px;
-
-  h2 {
-    font-size: 40px;
-    font-weight: 500;
-    position: relative;
-
-    &::before {
-      content: "";
-      height: 4px;
-      width: 50px;
-      background-color: $text-skin;
-      position: absolute;
-      top: 100%;
-      left: 0;
-    }
-
-    &::after {
-      content: "";
-      height: 4px;
-      width: 25px;
-      background-color: $text-skin;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      margin-top: 8px;
-    }
-  }
-}
-
 .about {
   .container {
     padding-top: 60px;
@@ -59,6 +26,10 @@
         font-size: 16px;
         line-height: 25px;
         color: $text-black-700;
+
+        @include mq("sm", "max") {
+          font-size: 12px;
+        }
       }
 
       flex: 0 0 100%;
@@ -70,10 +41,21 @@
       max-width: 60%;
       margin-top: 40px;
 
+      @include mq("lg", "max") {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+
       .info-item {
         flex: 0 0 45%;
         max-width: 45%;
         margin-right: 5px;
+
+        @include mq("sm", "max") {
+          flex: 0 0 100%;
+          max-width: 100%;
+          text-align: center;
+        }
 
         p {
           font-weight: 600;
@@ -82,11 +64,23 @@
           color: $text-black-900;
           border-bottom: 1px solid $bg-black-50;
 
+          @include mq("sm", "max") {
+            font-size: 12px;
+          }
+
           span {
             font-weight: normal;
             color: $text-black-700;
             margin-left: 5px;
             display: inline-block;
+
+            @include mq("sm", "max") {
+              font-size: 12px;
+            }
+
+            @include mq("xl", "max") {
+              display: block;
+            }
           }
         }
       }
@@ -95,11 +89,20 @@
         margin-top: 50px;
         width: 100%;
         display: flex;
-        justify-content: space-around;
+        justify-content: center;
+        gap: 30px;
+
+        @include mq("md", "max") {
+          flex-direction: column;
+          align-items: center;
+          max-width: 100%;
+        }
 
         .btn {
           margin-top: 10px;
-          margin-right: 15px;
+          @include mq("sm", "max") {
+            font-size: 12px;
+          }
         }
       }
     }
@@ -108,6 +111,11 @@
       flex: 0 0 40%;
       max-width: 40%;
       margin-top: 40px;
+
+      @include mq("lg", "max") {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
 
       .skill-item {
         flex: 0 0 100%;
@@ -120,6 +128,10 @@
           font-size: 16px;
           color: $text-black-900;
           text-transform: capitalize;
+
+          @include mq("sm", "max") {
+            font-size: 14px;
+          }
         }
 
         .progress {
@@ -128,6 +140,10 @@
           border-radius: 4px;
           width: 100%;
           position: relative;
+
+          @include mq("sm", "max") {
+            font-size: 14px;
+          }
 
           .progress-in {
             position: absolute;
@@ -204,6 +220,10 @@
             margin-bottom: 15px;
             text-transform: capitalize;
             color: $text-black-900;
+
+            @include mq("sm", "max") {
+              font-size: 14px;
+            }
           }
 
           .timeline-text {
@@ -211,6 +231,10 @@
             font-size: 16px;
             text-align: justify;
             color: $text-black-700;
+
+            @include mq("sm", "max") {
+              font-size: 12px;
+            }
           }
 
           .timeline-date {
@@ -218,6 +242,10 @@
             font-size: 14px;
             margin-bottom: 12px;
             color: $text-black-700;
+
+            @include mq("sm", "max") {
+              font-size: 12px;
+            }
 
             .fa {
               margin-right: 5px;
@@ -232,6 +260,11 @@
       flex: 0 0 50%;
       max-width: 50%;
       margin-top: 30px;
+
+      @include mq("md", "max") {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
     }
   }
 }

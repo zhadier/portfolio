@@ -3,15 +3,13 @@
 import { useRef, useEffect } from "react";
 import { randomColor, randomIntFromRange } from "../../utils/utils";
 
-const BgCanvas = () => {
+const BgCanvas = ({ mouseDown }) => {
   const canvasRef = useRef(null);
 
   let canvas;
   let context;
-  const mouseDown = useRef(false);
   const alpha = useRef(1);
   const radians = useRef(0);
-
   const colors = ["#541690", "#FF4949", "#FF8D29", "#FFCD38"];
 
   // particle
@@ -43,7 +41,7 @@ const BgCanvas = () => {
   const init = () => {
     particles = [];
 
-    for (let i = 0; i < 100; i += 1) {
+    for (let i = 0; i < 80; i += 1) {
       const canvasWidth = canvas.width + 300;
       const canvasHeight = canvas.height + 300;
       const radius = 3 * Math.random();
@@ -55,7 +53,7 @@ const BgCanvas = () => {
 
   const animate = () => {
     window.requestAnimationFrame(animate);
-    context.fillStyle = `rgba(255, 255, 255, ${alpha.current})`;
+    context.fillStyle = `rgba(20, 20, 20, ${alpha.current})`;
     context.fillRect(0, 0, canvas.width, canvas.height);
     context.save();
     context.translate((canvas.width * 6) / 10, canvas.height / 2);
@@ -65,21 +63,24 @@ const BgCanvas = () => {
     });
     context.restore();
 
-    radians.current += 0.001;
-    if (mouseDown.current && alpha.current >= 0.1) {
-      alpha.current -= 0.05;
+    radians.current += 0.0003;
+    if (mouseDown.current) {
+      radians.current += 0.01;
+      if (alpha.current >= 0.1) {
+        alpha.current -= 0.05;
+      }
     } else if (!mouseDown.current && alpha.current < 1) {
       alpha.current += 0.05;
     }
   };
 
-  const handleMouseDown = () => {
-    mouseDown.current = true;
-  };
+  // const handleMouseDown = () => {
+  //   mouseDown.current = true;
+  // };
 
-  const handleMouseUp = (e) => {
-    mouseDown.current = false;
-  };
+  // const handleMouseUp = (e) => {
+  //   mouseDown.current = false;
+  // };
 
   useEffect(() => {
     canvas = canvasRef.current;
@@ -97,8 +98,8 @@ const BgCanvas = () => {
 
   return (
     <canvas
-      onMouseDown={handleMouseDown}
-      onMouseUp={handleMouseUp}
+      // onMouseDown={handleMouseDown}
+      // onMouseUp={handleMouseUp}
       ref={canvasRef}
     />
   );

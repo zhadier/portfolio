@@ -1,20 +1,136 @@
-@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;300;500;700&family=Montserrat:wght@100;200;300;400;500;700&family=Open+Sans:wght@300;400;500;700&family=Raleway:wght@100;300;400;500&family=Roboto+Slab:wght@100;300;500;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;300;500;700&family=Montserrat:wght@100;200;300;400;500;700&family=Open+Sans:wght@300;400;500;700&family=Raleway:wght@100;300;400;500&family=Roboto+Slab:wght@100;300;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;700&display=swap");
 
-$font-league: 'League Spartan', sans-serif;
-$font-montserrat: 'Montserrat', sans-serif;
-$font-raleway: 'Raleway', sans-serif;
-$font-roboto: 'Roboto Slab', serif;
-$font-dancing: 'Dancing Script', cursive;
-
-$container-width-lg: 75%;
-$container-width-md: 86%;
-$container-width-sm: 90%;
+$font-league: "League Spartan", sans-serif;
+$font-montserrat: "Montserrat", sans-serif;
+$font-raleway: "Raleway", sans-serif;
+$font-roboto: "Roboto Slab", serif;
+$font-dancing: "Dancing Script", cursive;
 
 // ### Colors ###
-$bg-black-900: rgba(242, 242, 252, 0.04);
-$bg-black-100: #fdf9ff;
-$bg-black-50: #e8dfec;
-$text-black-900: #302e4d;
-$text-black-700: #504e70;
-$text-skin: #FC766AFF;
+$bg-black-900: #151515;
+$bg-black-100: #222;
+$bg-black-50: #393939;
+$text-black-900: #ffff;
+$text-black-700: #e9e9e9;
+$text-skin: #fc766aff;
+
+// ### Breakpoints ###
+$grid-breakpoints: (
+  xs: 0,
+  sm: 510px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+);
+
+// ### Animations ###
+@keyframes slide-section {
+  0% {
+    transform: translateX(25%);
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
+    background: $bg-black-900;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-up {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes slide-down {
+  0% {
+    transform: translateY(100%);
+  }
+
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes slide-right {
+  0% {
+    transform: translateX(-250px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-left {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes fade-left-in {
+  0% {
+    transform: translateX(150px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+// ### Media Query Mixin ###
+@mixin mq($width, $type: min) {
+  @if map_has_key($grid-breakpoints, $width) {
+    $width: map_get($grid-breakpoints, $width);
+
+    @if $type == max {
+      $width: $width - 1px;
+    }
+
+    @media only screen and (#{$type}-width: $width) {
+      @content;
+    }
+  }
+}
+
+// ### Animations Mixin ###
+@mixin slide-in() {
+  animation: fade-left-in 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@mixin slide-right() {
+  animation: slide-right 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@mixin fade-in() {
+  animation: fade-in 3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@mixin slide-section() {
+  animation: slide-section 1s ease;
+}

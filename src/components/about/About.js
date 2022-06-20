@@ -212,10 +212,6 @@ const About = () => {
                           - Providing specialized technical advice and guidance
                           to multiple junior developers over 1:1 zoom calls.
                         </p>
-                        <p className="timeline-text">
-                          - Providing advice and tips on how to maintain
-                          motivation to maintain longevity in the program.
-                        </p>
                       </div>
                       <div className="timeline-item">
                         <div className="circle-dot" />

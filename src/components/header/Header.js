@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import { useState } from "react";
 import {
   FaUserAlt,
   FaClipboardList,
@@ -9,15 +10,20 @@ import {
 import "./header.scss";
 
 const Header = () => {
+  const [menu, setMenu] = useState(true);
+
+  const handleMenuClick = (e) => {
+    setMenu((state) => !state);
+  };
   return (
-    <header className="aside">
+    <header className={`aside ${menu && "open"}`}>
       <div className="logo">
         <NavLink to="/">
           <span>Z</span>
           eeshan
         </NavLink>
       </div>
-      <div className="nav-toggler">
+      <div className="nav-toggler" onClick={handleMenuClick}>
         <FaBars className="hamburger" />
       </div>
 
@@ -34,13 +40,13 @@ const Header = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/Services">
-              <FaClipboardList className="nav-icon" /> Services
+            <NavLink to="/Portfolio">
+              <FaBriefcase className="nav-icon" /> Portfolio
             </NavLink>
           </li>
           <li>
-            <NavLink to="/Portfolio">
-              <FaBriefcase className="nav-icon" /> Porfolio
+            <NavLink to="/Contact">
+              <FaClipboardList className="nav-icon" /> Contact
             </NavLink>
           </li>
         </ul>

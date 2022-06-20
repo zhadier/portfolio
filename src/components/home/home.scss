@@ -5,17 +5,18 @@
   display: flex;
   align-items: center;
   color: $text-black-900;
-}
-
-.home-img img {
-  height: 300px;
-  border-radius: 30px;
-  margin: auto;
+  background: none;
 }
 
 .home-info {
   flex: 0 0 60%;
   max-width: 60%;
+
+  @include mq("lg", "max") {
+    flex: 0 0 100%;
+    max-width: 100%;
+    text-align: center;
+  }
 }
 
 .home-img {
@@ -23,29 +24,17 @@
   max-width: 40%;
   position: relative;
   text-align: center;
+
+  @include mq("lg", "max") {
+    display: none;
+  }
+
+  img {
+    height: 300px;
+    border-radius: 30px;
+    margin: auto;
+  }
 }
-
-// .home-img::before {
-//   content: "";
-//   position: absolute;
-//   left: -20px;
-//   top: -40px;
-//   border-top: 10px solid $text-skin;
-//   border-left: 10px solid $text-skin;
-//   height: 80px;
-//   width: 80px;
-// }
-
-// .home-img::after {
-//   content: "";
-//   position: absolute;
-//   right: -20px;
-//   bottom: -40px;
-//   border-bottom: 10px solid $text-skin;
-//   border-right: 10px solid $text-skin;
-//   height: 80px;
-//   width: 80px;
-// }
 
 .hello {
   font-size: 28px;
