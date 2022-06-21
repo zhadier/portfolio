@@ -4,7 +4,7 @@ import "./home.scss";
 import logo from "../../images/me.jpg";
 import BgCanvas from "../bg-canvas/BgCanvas";
 
-const Home = () => {
+const Home = ({ menu }) => {
   const mouseDown = useRef(false);
   const el = useRef(null);
 
@@ -28,7 +28,7 @@ const Home = () => {
   }, []);
 
   return (
-    <section className="home-section">
+    <section className={`home-section ${menu && "open"}`}>
       <BgCanvas mouseDown={mouseDown} />
       <div className="container">
         <div className="row">

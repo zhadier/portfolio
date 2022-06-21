@@ -37,10 +37,9 @@ h1 {
 }
 
 .main-content {
-  padding-left: 270px;
   position: relative;
 
-  @include mq("xl", "max") {
+  @include mq("sm", "max") {
     padding-left: 0;
   }
 }
@@ -58,13 +57,28 @@ canvas {
 }
 
 section {
+  position: absolute;
   background-color: $bg-black-900;
   min-height: 100vh;
   top: 0;
   right: 0;
+  left: 270px;
   padding: 0 50px;
+  transition: all 0.4s ease-in-out;
+
+  @include mq("xl", "max") {
+    left: 0;
+  }
 
   @include slide-section;
+}
+
+section.open {
+  left: 270px;
+
+  @include mq("lg", "max") {
+    left: 0;
+  }
 }
 
 .padd-15 {

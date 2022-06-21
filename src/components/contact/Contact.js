@@ -3,9 +3,9 @@ import { AiOutlineLinkedin } from "react-icons/ai";
 import { FaAngellist, FaGithub, FaMedium } from "react-icons/fa";
 import "./contact.scss";
 
-const Contact = () => {
+const Contact = ({ menu }) => {
   return (
-    <section className="contact">
+    <section className={`contact ${menu && "open"}`}>
       <div className="container">
         <div className="row">
           <div className="section-title padd-15">

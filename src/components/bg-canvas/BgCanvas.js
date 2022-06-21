@@ -5,7 +5,6 @@ import { randomColor, randomIntFromRange } from "../../utils/utils";
 
 const BgCanvas = ({ mouseDown }) => {
   const canvasRef = useRef(null);
-
   let canvas;
   let context;
   const alpha = useRef(1);
@@ -88,13 +87,14 @@ const BgCanvas = ({ mouseDown }) => {
     const handleResize = () => {
       canvas.height = window.innerHeight;
       canvas.width = window.innerWidth;
+      context.clearRect(0, 0, canvas.width, canvas.height);
     };
     handleResize();
     window.addEventListener("resize", handleResize);
     init();
     animate();
     return () => window.removeEventListener("resize", handleResize);
-  }, [animate]);
+  }, []);
 
   return (
     <canvas

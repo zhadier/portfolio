@@ -39,7 +39,7 @@
     .personal-info {
       flex: 0 0 60%;
       max-width: 60%;
-      margin-top: 40px;
+      margin-top: 80px;
 
       @include mq("lg", "max") {
         flex: 0 0 100%;
@@ -51,6 +51,12 @@
         max-width: 45%;
         margin-right: 5px;
 
+        @include mq("lg", "max") {
+          flex: 0 0 50%;
+          max-width: 50%;
+          margin-right: 0;
+        }
+
         @include mq("sm", "max") {
           flex: 0 0 100%;
           max-width: 100%;
@@ -61,6 +67,7 @@
           font-weight: 600;
           padding: 10px 0;
           font-size: 16px;
+          word-wrap: break-word;
           color: $text-black-900;
           border-bottom: 1px solid $bg-black-50;
 
@@ -86,11 +93,15 @@
       }
 
       .buttons {
-        margin-top: 50px;
-        width: 100%;
+        margin-top: 30px;
+        width: 90%;
         display: flex;
         justify-content: center;
         gap: 30px;
+
+        @include mq("lg", "max") {
+          width: 100%;
+        }
 
         @include mq("md", "max") {
           flex-direction: column;
@@ -100,6 +111,7 @@
 
         .btn {
           margin-top: 10px;
+
           @include mq("sm", "max") {
             font-size: 12px;
           }
@@ -108,9 +120,9 @@
     }
 
     .skills {
+      margin-top: 80px;
       flex: 0 0 40%;
       max-width: 40%;
-      margin-top: 40px;
 
       @include mq("lg", "max") {
         flex: 0 0 100%;
@@ -259,7 +271,7 @@
     .experience {
       flex: 0 0 50%;
       max-width: 50%;
-      margin-top: 30px;
+      margin-top: 80px;
 
       @include mq("md", "max") {
         flex: 0 0 100%;

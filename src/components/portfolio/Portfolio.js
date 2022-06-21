@@ -1,8 +1,9 @@
 import React from "react";
 import "./portfolio.scss";
-const Portfolio = () => {
+const Portfolio = ({ menu }) => {
+  console.log(menu);
   return (
-    <section className="portfolio">
+    <section className={`portfolio ${menu && "open"}`}>
       <div className="container">
         <div className="row">
           <div className="section-title padd-15">
@@ -10,7 +11,7 @@ const Portfolio = () => {
           </div>
         </div>
         <div className="row">
-          <div className="portfolio-heading">
+          <div className="portfolio-heading padd-15">
             <h2>My Latest Projects: </h2>
           </div>
         </div>

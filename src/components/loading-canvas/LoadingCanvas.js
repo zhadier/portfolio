@@ -1,8 +1,7 @@
 /* eslint-disable no-param-reassign */
 /* eslint-disable react/no-this-in-sfc */
-import { useRef, useEffect } from 'react';
-import { randomColor, randomIntFromRange } from '../../utils/utils';
-
+import { useRef, useEffect } from "react";
+import { randomColor, randomIntFromRange } from "../../utils/utils";
 
 const LoadingCanvas = () => {
   const canvasRef = useRef(null);
@@ -15,7 +14,7 @@ const LoadingCanvas = () => {
     y: window.innerHeight / 2,
   };
 
-  const colors = ['#03045E', '#00B4D8', '#90E0EF', '#CAF0F8'];
+  const colors = ["#03045E", "#00B4D8", "#90E0EF", "#CAF0F8"];
 
   const handleMousMmove = (event) => {
     mouse.x = event.clientX;
@@ -53,8 +52,10 @@ const LoadingCanvas = () => {
       this.radians += this.velocity;
       this.lastMouse.x += (mouse.x - this.lastMouse.x) * 0.02;
       this.lastMouse.y += (mouse.y - this.lastMouse.y) * 0.05;
-      this.x = this.lastMouse.x + Math.cos(this.radians) * this.distanceFromCenter;
-      this.y = this.lastMouse.y + Math.sin(this.radians) * this.distanceFromCenter;
+      this.x =
+        this.lastMouse.x + Math.cos(this.radians) * this.distanceFromCenter;
+      this.y =
+        this.lastMouse.y + Math.sin(this.radians) * this.distanceFromCenter;
       this.draw(lastPoint);
     };
   }
@@ -67,14 +68,19 @@ const LoadingCanvas = () => {
     for (let i = 0; i < 200; i += 1) {
       const radius = 2 * Math.random() + 3;
       particles.push(
-        new Particle(canvas.width * (3 / 4), canvas.height / 2, radius, randomColor(colors)),
+        new Particle(
+          canvas.width * (3 / 4),
+          canvas.height / 2,
+          radius,
+          randomColor(colors)
+        )
       );
     }
   };
 
   const animate = () => {
     window.requestAnimationFrame(animate);
-    context.fillStyle = 'rgba(242, 242, 252, 0.04)';
+    context.fillStyle = "rgba(242, 242, 252, 0.04)";
     context.fillRect(0, 0, canvas.width, canvas.height);
 
     particles.forEach((particle) => {
@@ -84,16 +90,16 @@ const LoadingCanvas = () => {
 
   useEffect(() => {
     canvas = canvasRef.current;
-    context = canvas.getContext('2d');
+    context = canvas.getContext("2d");
     const handleResize = () => {
       canvas.height = window.innerHeight;
       canvas.width = window.innerWidth;
     };
     handleResize();
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
     init();
     animate();
-    return () => window.removeEventListener('resize', handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, [animate]);
 
   return <canvas onMouseMove={handleMousMmove} ref={canvasRef} />;

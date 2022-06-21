@@ -2,9 +2,9 @@ import React from "react";
 import { BsCalendar2Date } from "react-icons/bs";
 import "./about.scss";
 
-const About = () => {
+const About = ({ menu }) => {
   return (
-    <section className="about">
+    <section className={`about ${menu && "open"}`}>
       <div className="container">
         <div className="row">
           <div className="section-title padd-15">
@@ -28,11 +28,9 @@ const About = () => {
                   developers from all over the world, usually via pair
                   programming. I love spending my time doing code reviews,
                   testing, or sometimes just helping my peers out during Scrum
-                  meetings. All of which has helped me nurture valuable skills
-                  like communication, teamwork, and the ever-elusive ability to
-                  be inclusive in a diverse work environment. In my free time, I
-                  find joy in playing chess and football. I also take pride in
-                  being a DSA aficionado and love solving problems for fun
+                  meetings. In my free time, I find joy in playing chess and
+                  football. I also take pride in being a DSA aficionado and love
+                  solving problems for fun
                 </p>
               </div>
             </div>
@@ -51,7 +49,7 @@ const About = () => {
                   </div>
                   <div className="info-item padd-15">
                     <p>
-                      Website : <span>www.github.com/zhadier</span>
+                      Website : <span>github.com/zhadier</span>
                     </p>
                   </div>
                   <div className="info-item padd-15">
@@ -66,7 +64,7 @@ const About = () => {
                   </div>
                   <div className="info-item padd-15">
                     <p>
-                      Certifications : <span>React & Rails Developer</span>
+                      Certifications : <span>Full Stack Developer</span>
                     </p>
                   </div>
                   <div className="info-item padd-15">
@@ -84,9 +82,6 @@ const About = () => {
                   <div className="buttons">
                     <a href="#" className="btn">
                       Get Resume
-                    </a>
-                    <a href="#" className="btn">
-                      Get LinkedIn
                     </a>
                   </div>
                 </div>

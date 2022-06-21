@@ -1,13 +1,13 @@
 @import "src/variables/variables";
 
-header {
+.aside {
   width: 270px;
   background-color: $bg-black-100;
   position: fixed;
   left: 0;
   top: 0;
   z-index: 10;
-  height: 100%;
+  height: 100vh;
   padding: 30px;
   padding-top: 60px;
   display: flex;
@@ -16,11 +16,42 @@ header {
   align-items: center;
   border-right: 2px solid $bg-black-50;
   border-radius: 0 20px 20px 0;
-  transition: left 0.5s ease-in-out;
+  transition: all 0.4s ease-in-out;
 
   @include mq("xl", "max") {
     left: -270px;
-    margin-left: 0;
+  }
+
+  .nav-list {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    gap: 2rem;
+  }
+
+  .nav-list li a {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border-bottom: 1px solid $bg-black-50;
+    font-weight: 600;
+    color: $text-black-900;
+    padding: 5px 15px;
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: scale(1.2);
+      background-color: $text-skin;
+      color: $text-black-700;
+    }
+  }
+
+  .nav-list li a.active {
+    color: $text-skin;
+
+    &:hover {
+      color: $text-black-700;
+    }
   }
 }
 
@@ -28,7 +59,36 @@ header {
   left: 0;
 }
 
+.nav-toggler {
+  cursor: pointer;
+  position: fixed;
+  width: 30px;
+  height: 30px;
+  top: 15px;
+  border: 1px solid $text-skin;
+  justify-content: center;
+  align-items: center;
+  display: none;
+  transition: all 0.4s ease-in-out;
+
+  @include mq("xl", "max") {
+    display: flex;
+    left: 20px;
+  }
+}
+
+.nav-toggler.open {
+  @include mq("xl", max) {
+    left: 300px;
+  }
+
+  @include mq("lg", max) {
+    left: 20px;
+  }
+}
+
 .logo {
+  margin-top: 20px;
   flex: 0 1 30px;
   text-transform: capitalize;
 }
@@ -41,28 +101,42 @@ header {
   padding: 15px 20px;
   font-size: 30px;
   letter-spacing: 5px;
-}
 
-.logo a::before {
-  content: "";
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  border-bottom: 5px solid $text-skin;
-  border-left: 5px solid $text-skin;
-  bottom: 0;
-  left: 0;
-}
+  &:hover {
+    transition: all 1s ease 1.5s;
+    background: $text-black-900;
+    color: $text-skin;
+  }
 
-.logo a::after {
-  content: "";
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  border-top: 5px solid $text-skin;
-  border-right: 5px solid $text-skin;
-  top: 0;
-  right: 5px;
+  &::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-top: 5px solid $text-skin;
+    border-right: 5px solid $text-skin;
+    top: 0;
+    right: 0;
+    transition: all 2s ease;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-bottom: 5px solid $text-skin;
+    border-left: 5px solid $text-skin;
+    bottom: 0;
+    left: 0;
+    transition: all 2s ease;
+  }
+
+  &:hover::after,
+  &:hover::before {
+    width: 100%;
+    height: 100%;
+  }
 }
 
 .logo a span {
@@ -76,42 +150,6 @@ header {
   margin-bottom: 70px;
 }
 
-.nav-toggler {
-  cursor: pointer;
-  position: fixed;
-  left: 30px;
-  top: 20px;
-  justify-content: center;
-  align-items: center;
-  display: none;
-  transition: left 2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-
-  @include mq("xl", "max") {
-    display: inline-block;
-  }
-}
-
 .hamburger {
   fill: $text-skin;
-}
-
-.nav-list {
-  display: flex;
-  flex-direction: column;
-  list-style: none;
-  gap: 2rem;
-}
-
-.nav-list li a {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  border-bottom: 1px solid $bg-black-50;
-  font-weight: 600;
-  color: $text-black-900;
-  padding: 5px 15px;
-}
-
-.nav-list li a.active {
-  color: $text-skin;
 }
