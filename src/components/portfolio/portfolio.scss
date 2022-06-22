@@ -16,34 +16,183 @@
       font-weight: 500;
     }
   }
+}
 
+.projects {
   .portfolio-item {
-    flex: 0 0 33.33%;
-    max-width: 33.33%;
+    width: 550px;
     margin-bottom: 30px;
 
-    @include mq("lg", "max") {
-      flex: 0 0 50%;
-      max-width: 50%;
-    }
-
     @include mq("md", "max") {
-      flex: 0 0 100%;
-      max-width: 100%;
+      width: 400px;
     }
 
     .portfolio-item-inner {
+      position: relative;
       border: 6px solid $bg-black-100;
       border-radius: 10px;
+      display: flex;
+      flex-direction: column;
       overflow: hidden;
+    }
+  }
+
+  .project-filter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid $bg-black-100;
+    flex-wrap: wrap;
+    margin: 20px;
+    list-style: none;
+
+    .filter-active {
+      color: $text-skin;
+      background-color: $bg-black-100;
+    }
+
+    li {
+      margin: 10px;
+      padding: 5px 20px;
+      color: $text-black-700;
+      font-size: 16px;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      -ms-user-select: none;
+      -webkit-user-select: none;
+      user-select: none;
+
+      @include mq("sm", "max") {
+        font-size: 12px;
+        padding: 5px 10px;
+      }
+    }
+  }
+
+  .projects-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
+    .portfolio-img {
+      height: 250px;
+      object-fit: contain;
+      position: relative;
+
+      @include mq("md", "max") {
+        height: 200px;
+      }
+
+      @include mq("md", "max") {
+        height: 160px;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        display: block;
+      }
+    }
+
+    h3 {
+      padding: 10px;
+      border-bottom: 2px solid $bg-black-50;
+      text-align: center;
+      font-size: 16px;
+      color: $text-black-900;
+    }
+
+    .techs {
+      list-style: none;
+      display: flex;
+      padding: 5px 0;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+
+      li {
+        font-size: 12px;
+        font-style: italic;
+        color: $text-skin;
+        border: 1px solid $bg-black-100;
+        border-radius: 20px;
+        padding: 4px 7px;
+      }
+    }
+
+    .project-button {
+      background: $bg-black-900;
+      font-size: 1.2rem;
+      letter-spacing: 0.8rem;
+      text-transform: uppercase;
+      text-align: center;
+      color: $text-skin;
       cursor: pointer;
 
-      .portfolio-img {
-        img {
+      @include mq("md", "max") {
+        font-size: 1rem;
+      }
+
+      @include mq("md", "max") {
+        position: relative;
+        font-size: 11px;
+        font-weight: normal;
+        bottom: 0;
+        border: none;
+        border-top: 1px solid $bg-black-50;
+        padding: 10px;
+        letter-spacing: 0.3rem;
+      }
+
+      &::before,
+      &::after {
+        top: 0;
+        width: 0;
+        height: 100%;
+      }
+
+      &::before {
+        left: 0;
+        border: 1px solid $text-black-900;
+        border-left: 0;
+        border-right: 0;
+      }
+
+      &::after {
+        right: 0;
+      }
+
+      &:hover {
+        color: var(--def);
+        transition-delay: 0.5s;
+
+        &::before {
+          transition-delay: 0s;
           width: 100%;
-          display: block;
+        }
+
+        &::after {
+          background: $text-black-900;
+          transition-delay: 0.35s;
+          width: 100%;
         }
       }
+
+      transition: width 500ms cubic-bezier(0.77, 0, 0.175, 1);
+      width: 100%;
+      position: absolute;
+      bottom: -120px;
+
+      &:hover {
+        color: $bg-black-900;
+        opacity: 1;
+      }
+    }
+
+    .portfolio-item-inner:hover .project-button {
+      bottom: 0;
+      top: 0;
     }
   }
 }

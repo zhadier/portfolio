@@ -14,7 +14,7 @@ const About = ({ menu }) => {
         <div className="row">
           <div className="about-content padd-15">
             <div className="row">
-              <div className="about-text padd-15">
+              <div className="about-text">
                 <h3>
                   I'm Zeeshan Haider, a <span>Web Developer</span>
                 </h3>
@@ -135,7 +135,7 @@ const About = ({ menu }) => {
               <div className="education padd-15">
                 <h3 className="title">Education</h3>
                 <div className="row">
-                  <div className="timeline-box padd-15">
+                  <div className="timeline-box">
                     <div className="timeline shadow-dark">
                       <div className="timeline-item">
                         <div className="circle-dot" />
@@ -185,7 +185,7 @@ const About = ({ menu }) => {
               <div className="experience padd-15">
                 <h3 className="title">Experience</h3>
                 <div className="row">
-                  <div className="timeline-box padd-15">
+                  <div className="timeline-box">
                     <div className="timeline shadow-dark">
                       <div className="timeline-item">
                         <div className="circle-dot" />

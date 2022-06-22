@@ -22,14 +22,12 @@ function App() {
         handleHamburger={handleMenuState}
         handleLinkClick={handleLinkClick}
       />
-      <div className="main-content">
-        <Routes>
-          <Route path="/" element={<Home menu={menuState} />} />
-          <Route path="/About" element={<About menu={menuState} />} />
-          <Route path="/Portfolio" element={<Portfolio menu={menuState} />} />
-          <Route path="/Contact" element={<Contact menu={menuState} />} />
-        </Routes>
-      </div>
+      <Routes>
+        <Route path="/" element={<Home menu={menuState} />} />
+        <Route path="/About" element={<About menu={menuState} />} />
+        <Route path="/Portfolio" element={<Portfolio menu={menuState} />} />
+        <Route path="/Contact" element={<Contact menu={menuState} />} />
+      </Routes>
     </>
   );
 }

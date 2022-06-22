@@ -17,10 +17,11 @@
 }
 
 body {
-  width: 100%;
   line-height: 1.8;
   font-family: $font-raleway;
+  background: url(./images/pattern.svg);
   background-color: $bg-black-900;
+  overflow: hidden;
 }
 
 h1,
@@ -36,38 +37,36 @@ h1 {
   font-size: 2.5rem;
 }
 
-.main-content {
-  position: relative;
-
-  @include mq("sm", "max") {
-    padding-left: 0;
-  }
-}
-
 .hidden {
   display: none !important;
 }
 
 canvas {
   position: absolute;
-  top: 0;
-  left: 0;
   width: 100vw;
   height: 100vh;
 }
 
 section {
   position: absolute;
-  background-color: $bg-black-900;
-  min-height: 100vh;
+  height: 100vh;
   top: 0;
   right: 0;
   left: 270px;
-  padding: 0 50px;
   transition: all 0.4s ease-in-out;
+  padding: 10px 50px;
+  overflow: auto;
 
   @include mq("xl", "max") {
     left: 0;
+  }
+
+  @include mq("md", "max") {
+    padding: 10px 30px;
+  }
+
+  @include mq("", "max") {
+    padding: 10px;
   }
 
   @include slide-section;
@@ -92,12 +91,7 @@ section.open {
 .row {
   display: flex;
   flex-wrap: wrap;
-  margin: 0 -15px;
   position: relative;
-
-  @include mq("sm", "max") {
-    margin: 0 -20px;
-  }
 }
 
 .section-title {

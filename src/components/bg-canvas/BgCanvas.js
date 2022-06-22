@@ -9,7 +9,7 @@ const BgCanvas = ({ mouseDown }) => {
   let context;
   const alpha = useRef(1);
   const radians = useRef(0);
-  const colors = ["#541690", "#FF4949", "#FF8D29", "#FFCD38"];
+  const colors = ["#DFF6FF", "#8D8DAA", "#92B4EC", "#F2D1D1"];
 
   // particle
   class Particle {
@@ -52,7 +52,7 @@ const BgCanvas = ({ mouseDown }) => {
 
   const animate = () => {
     window.requestAnimationFrame(animate);
-    context.fillStyle = `rgba(20, 20, 20, ${alpha.current})`;
+    context.fillStyle = `rgba(21, 21, 21, ${alpha.current})`;
     context.fillRect(0, 0, canvas.width, canvas.height);
     context.save();
     context.translate((canvas.width * 6) / 10, canvas.height / 2);

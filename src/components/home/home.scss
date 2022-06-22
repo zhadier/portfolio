@@ -5,17 +5,47 @@
   display: flex;
   align-items: center;
   color: $text-black-900;
-  background: none;
 }
 
 .home-info {
-  flex: 0 0 60%;
-  max-width: 60%;
+  flex: 0 0 55%;
+  max-width: 55%;
 
   @include mq("lg", "max") {
     flex: 0 0 100%;
     max-width: 100%;
     text-align: center;
+  }
+}
+
+.social-links {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 50px;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+
+  @include mq("sm", "max") {
+    gap: 30px;
+  }
+
+  li {
+    a {
+      color: $text-black-700;
+      font-size: 30px;
+
+      &:hover {
+        color: $text-skin;
+      }
+
+      @include mq("sm", "max") {
+        font-size: 20px;
+      }
+    }
   }
 }
 
@@ -52,6 +82,10 @@
 .my-profession {
   font-size: 30px;
   margin: 15px 0;
+
+  @include mq("sm", "max") {
+    font-size: 18px;
+  }
 }
 
 .typing {

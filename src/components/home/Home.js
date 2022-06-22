@@ -1,4 +1,6 @@
 import { useRef, useEffect } from "react";
+import { AiOutlineLinkedin } from "react-icons/ai";
+import { FaAngellist, FaGithub, FaMedium } from "react-icons/fa";
 import Typed from "typed.js";
 import "./home.scss";
 import logo from "../../images/me.jpg";
@@ -21,58 +23,83 @@ const Home = ({ menu }) => {
       backSpeed: 60,
       loop: true,
     });
-    // Destropying
+    // Destroying
     return () => {
       typed.destroy();
     };
   }, []);
 
   return (
-    <section className={`home-section ${menu && "open"}`}>
+    <>
       <BgCanvas mouseDown={mouseDown} />
-      <div className="container">
-        <div className="row">
-          <div className="home-info padd-15">
-            <h3 className="hello">
-              Hey there, I'm <span className="name">Zeeshan</span>
-            </h3>
-            <h3 className="my-profession">
-              I'm a{" "}
-              <span className="typing" ref={el}>
-                Web Developer
-              </span>
-            </h3>
-            <p>
-              I can help you build a product , feature or website. Look through
-              some of my work and experience! If you like what you see and have
-              a project you need coded, don’t hestiate to contact me.
-            </p>
-
-            <a
-              href="#contact"
-              className="btn hire-me"
-              onTouchStart={() => {
-                mouseDown.current = true;
-              }}
-              onTouchEnd={() => {
-                mouseDown.current = true;
-              }}
-              onMouseDown={() => {
-                mouseDown.current = true;
-              }}
-              onMouseUp={() => {
-                mouseDown.current = false;
-              }}
-            >
-              Warp
+      <section className={`home-section ${menu && "open"}`}>
+        <ul className="social-links">
+          <li>
+            <a target="_blank" href="https://github.com/zhadier">
+              <FaGithub />
             </a>
-          </div>
-          <div className="home-img padd-15">
-            <img src={logo} alt="" />
+          </li>
+          <li>
+            <a target="_blank" href="https://www.linkedin.com/in/zhadier39/">
+              <AiOutlineLinkedin />
+            </a>
+          </li>
+          <li>
+            <a target="_blank" href="https://medium.com/@zhadier39">
+              <FaMedium />
+            </a>
+          </li>
+
+          <li>
+            <a target="_blank" href="https://www.angel.co/u/zhadier39">
+              <FaAngellist />
+            </a>
+          </li>
+        </ul>
+        <div className="container">
+          <div className="row">
+            <div className="home-info padd-15">
+              <h3 className="hello">
+                Hey there, I'm <span className="name">Zeeshan</span>
+              </h3>
+              <h3 className="my-profession">
+                I'm a{" "}
+                <span className="typing" ref={el}>
+                  Web Developer
+                </span>
+              </h3>
+              <p>
+                I can help you build a product , feature or website. Look
+                through some of my work and experience! If you like what you see
+                and have a project you need coded, don’t hestiate to contact me.
+              </p>
+
+              <a
+                href="#contact"
+                className="btn hire-me"
+                onTouchStart={() => {
+                  mouseDown.current = true;
+                }}
+                onTouchEnd={() => {
+                  mouseDown.current = true;
+                }}
+                onMouseDown={() => {
+                  mouseDown.current = true;
+                }}
+                onMouseUp={() => {
+                  mouseDown.current = false;
+                }}
+              >
+                Warp
+              </a>
+            </div>
+            <div className="home-img padd-15">
+              <img src={logo} alt="" />
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 
