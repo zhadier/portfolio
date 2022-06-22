@@ -14,7 +14,7 @@ You can find the app [live link here](https://portfolio-zhadier.netlify.app/)
 ## Built With
 
 - Languages: _**JavaScript, HTML & SCSS**_
-- Frameworks: _**React & Redux**_
+- Frameworks: _**React**_
 - Technologies used: _**Visual Studio Code**_
 
 ## Getting Started
