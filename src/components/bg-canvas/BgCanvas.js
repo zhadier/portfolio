@@ -1,7 +1,7 @@
 /* eslint-disable no-param-reassign */
 /* eslint-disable react/no-this-in-sfc */
-import { useRef, useEffect } from "react";
-import { randomColor, randomIntFromRange } from "../../utils/utils";
+import { useRef, useEffect } from 'react';
+import { randomColor } from '../../utils/utils';
 
 const BgCanvas = ({ mouseDown }) => {
   const canvasRef = useRef(null);
@@ -9,7 +9,7 @@ const BgCanvas = ({ mouseDown }) => {
   let context;
   const alpha = useRef(1);
   const radians = useRef(0);
-  const colors = ["#DFF6FF", "#8D8DAA", "#92B4EC", "#F2D1D1"];
+  const colors = ['#DFF6FF', '#8D8DAA', '#92B4EC', '#F2D1D1'];
 
   // particle
   class Particle {
@@ -83,17 +83,17 @@ const BgCanvas = ({ mouseDown }) => {
 
   useEffect(() => {
     canvas = canvasRef.current;
-    context = canvas.getContext("2d");
+    context = canvas.getContext('2d');
     const handleResize = () => {
       canvas.height = window.innerHeight;
       canvas.width = window.innerWidth;
       context.clearRect(0, 0, canvas.width, canvas.height);
     };
     handleResize();
-    window.addEventListener("resize", handleResize);
+    window.addEventListener('resize', handleResize);
     init();
     animate();
-    return () => window.removeEventListener("resize", handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   return (

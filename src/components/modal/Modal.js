@@ -1,35 +1,33 @@
-import { useRef } from "react";
-import { AiOutlineClose, AiOutlineGithub } from "react-icons/ai";
-import { HiOutlineExternalLink } from "react-icons/hi";
-import { useSpring, animated } from "@react-spring/web";
+import { AiOutlineClose, AiOutlineGithub } from 'react-icons/ai';
+import { HiOutlineExternalLink } from 'react-icons/hi';
+import { useSpring, animated } from '@react-spring/web';
 
-import "./modal.scss";
+import './modal.scss';
 
 const Modal = ({ showModal, setShowModal, currentProject }) => {
-  const modalRef = useRef();
-
   const animation = useSpring({
     config: {
       duration: 250,
     },
     opacity: showModal ? 1 : 0,
-    transform: showModal ? `translateY(0%)` : `translateY(30%)`,
-    display: "flex",
-    justifyContent: "center",
+    transform: showModal ? 'translateY(0%)' : 'translateY(30%)',
+    display: 'flex',
+    justifyContent: 'center',
   });
 
   return showModal ? (
     <div className="modal-background">
       <animated.div style={animation}>
         <div className="modal-wrapper">
-          <div
+          <button
+            type="button"
             onClick={() => {
               setShowModal(false);
             }}
             className="modal-close"
           >
             <AiOutlineClose />
-          </div>
+          </button>
           <div className="modal-image">
             <img src={currentProject.image} alt="project screenshot" />
           </div>
@@ -47,15 +45,21 @@ const Modal = ({ showModal, setShowModal, currentProject }) => {
                 target="_blank"
                 className="btn"
                 href={currentProject.linkToLiveVersion}
+                rel="noreferrer"
               >
-                See Live <HiOutlineExternalLink className="live-link" />
+                See Live
+                {' '}
+                <HiOutlineExternalLink className="live-link" />
               </a>
               <a
                 target="_blank"
                 className="btn"
                 href={currentProject.linkToSource}
+                rel="noreferrer"
               >
-                See Source <AiOutlineGithub className="live-link" />
+                See Source
+                {' '}
+                <AiOutlineGithub className="live-link" />
               </a>
             </div>
           </div>

@@ -18,12 +18,11 @@
     "react/jsx-filename-extension": ["warn", { "extensions": [".js", ".jsx"] }],
     "react/react-in-jsx-scope": "off",
     "import/no-unresolved": "off",
-    "react/jsx-key": "off" ,
-    "no-shadow": "off"
+    "react/jsx-key": "off",
+    "no-shadow": "off",
+    "react/prop-types": 0,
+    "react/no-unescaped-entities": 0,
+    "jsx-a11y/no-noninteractive-element-interactions": 0
   },
-  "ignorePatterns": [
-    "dist/",
-    "build/",
-    "src/"
-  ]
+  "ignorePatterns": ["dist/", "build/"]
 }

@@ -1,12 +1,12 @@
-import { BsCalendar2Date } from "react-icons/bs";
-import Aos from "aos";
-import "aos/dist/aos.css";
-import "./about.scss";
+import { BsCalendar2Date } from 'react-icons/bs';
+import Aos from 'aos';
+import 'aos/dist/aos.css';
+import './about.scss';
 
 const About = ({ menu }) => {
   Aos.init({ duration: 1000 });
   return (
-    <section className={`about ${menu && "open"}`}>
+    <section className={`about ${menu && 'open'}`}>
       <div className="container">
         <div className="row">
           <div className="section-title padd-15">
@@ -18,7 +18,9 @@ const About = ({ menu }) => {
             <div className="row">
               <div className="about-text">
                 <h3 data-aos="fade-in">
-                  I'm Zeeshan Haider, a <span>Web Developer</span>
+                  I'm Zeeshan Haider, a
+                  {' '}
+                  <span>Web Developer</span>
                 </h3>
                 <p data-aos="fade-in">
                   I'm a complex problem-solver with an analytical and driven
@@ -41,42 +43,58 @@ const About = ({ menu }) => {
                 <div className="row">
                   <div className="info-item padd-15">
                     <p>
-                      Birthday : <span>12 Nov 1998</span>
+                      Birthday :
+                      {' '}
+                      <span>12 Nov 1998</span>
                     </p>
                   </div>
                   <div className="info-item padd-15">
                     <p>
-                      Age : <span>23</span>
+                      Age :
+                      {' '}
+                      <span>23</span>
                     </p>
                   </div>
                   <div className="info-item padd-15">
                     <p>
-                      Website : <span>github.com/zhadier</span>
+                      Website :
+                      {' '}
+                      <span>github.com/zhadier</span>
                     </p>
                   </div>
                   <div className="info-item padd-15">
                     <p>
-                      Email : <span>zhadier39@gmail.com</span>
+                      Email :
+                      {' '}
+                      <span>zhadier39@gmail.com</span>
                     </p>
                   </div>
                   <div className="info-item padd-15">
                     <p>
-                      Degree : <span>Electrical Engineering</span>
+                      Degree :
+                      {' '}
+                      <span>Electrical Engineering</span>
                     </p>
                   </div>
                   <div className="info-item padd-15">
                     <p>
-                      Certifications : <span>Full Stack Developer</span>
+                      Certifications :
+                      {' '}
+                      <span>Full Stack Developer</span>
                     </p>
                   </div>
                   <div className="info-item padd-15">
                     <p>
-                      Phone : <span>+92-3328331524</span>
+                      Phone :
+                      {' '}
+                      <span>+92-3328331524</span>
                     </p>
                   </div>
                   <div className="info-item padd-15">
                     <p>
-                      Hobbies : <span>Chess & Football</span>
+                      Hobbies :
+                      {' '}
+                      <span>Chess & Football</span>
                     </p>
                   </div>
                 </div>
@@ -86,6 +104,7 @@ const About = ({ menu }) => {
                       href="https://drive.google.com/file/d/1k5943aYP9OPyVKhgvir1tuSFmNGrH9L4/view?usp=sharing"
                       className="btn"
                       target="_blank"
+                      rel="noreferrer"
                     >
                       Get Resume
                     </a>
@@ -99,8 +118,8 @@ const About = ({ menu }) => {
                     <div className="progress">
                       <div
                         className="progress-in"
-                        style={{ width: "80%" }}
-                      ></div>
+                        style={{ width: '80%' }}
+                      />
                       <div className="skill-percent">80%</div>
                     </div>
                   </div>
@@ -109,8 +128,8 @@ const About = ({ menu }) => {
                     <div className="progress">
                       <div
                         className="progress-in"
-                        style={{ width: "75%" }}
-                      ></div>
+                        style={{ width: '75%' }}
+                      />
                       <div className="skill-percent">75%</div>
                     </div>
                   </div>
@@ -119,8 +138,8 @@ const About = ({ menu }) => {
                     <div className="progress">
                       <div
                         className="progress-in"
-                        style={{ width: "95%" }}
-                      ></div>
+                        style={{ width: '95%' }}
+                      />
                       <div className="skill-percent">95%</div>
                     </div>
                   </div>
@@ -129,8 +148,8 @@ const About = ({ menu }) => {
                     <div className="progress">
                       <div
                         className="progress-in"
-                        style={{ width: "70%" }}
-                      ></div>
+                        style={{ width: '70%' }}
+                      />
                       <div className="skill-percent">70%</div>
                     </div>
                   </div>

@@ -1,10 +1,10 @@
-import { useRef, useEffect } from "react";
-import { AiOutlineLinkedin } from "react-icons/ai";
-import { FaAngellist, FaGithub, FaMedium } from "react-icons/fa";
-import Typed from "typed.js";
-import "./home.scss";
-import logo from "../../images/me.jpg";
-import BgCanvas from "../bg-canvas/BgCanvas";
+import { useRef, useEffect } from 'react';
+import { AiOutlineLinkedin } from 'react-icons/ai';
+import { FaAngellist, FaGithub, FaMedium } from 'react-icons/fa';
+import Typed from 'typed.js';
+import './home.scss';
+import logo from '../../images/me.jpg';
+import BgCanvas from '../bg-canvas/BgCanvas';
 
 const Home = ({ menu }) => {
   const mouseDown = useRef(false);
@@ -13,10 +13,10 @@ const Home = ({ menu }) => {
   useEffect(() => {
     const typed = new Typed(el.current, {
       strings: [
-        "React Developer",
-        "Rails Developer",
-        "Electrical Engineer",
-        "Chess Enthusiast",
+        'React Developer',
+        'Rails Developer',
+        'Electrical Engineer',
+        'Chess Enthusiast',
       ], // Strings to display
       // Speed settings, try diffrent values untill you get good results
       typeSpeed: 100,
@@ -32,26 +32,26 @@ const Home = ({ menu }) => {
   return (
     <>
       <BgCanvas mouseDown={mouseDown} />
-      <section className={`home-section ${menu && "open"}`}>
+      <section className={`home-section ${menu && 'open'}`}>
         <ul className="social-links">
           <li>
-            <a target="_blank" href="https://github.com/zhadier">
+            <a target="_blank" href="https://github.com/zhadier" rel="noreferrer">
               <FaGithub />
             </a>
           </li>
           <li>
-            <a target="_blank" href="https://www.linkedin.com/in/zhadier39/">
+            <a target="_blank" href="https://www.linkedin.com/in/zhadier39/" rel="noreferrer">
               <AiOutlineLinkedin />
             </a>
           </li>
           <li>
-            <a target="_blank" href="https://medium.com/@zhadier39">
+            <a target="_blank" href="https://medium.com/@zhadier39" rel="noreferrer">
               <FaMedium />
             </a>
           </li>
 
           <li>
-            <a target="_blank" href="https://www.angel.co/u/zhadier39">
+            <a target="_blank" href="https://www.angel.co/u/zhadier39" rel="noreferrer">
               <FaAngellist />
             </a>
           </li>
@@ -60,10 +60,13 @@ const Home = ({ menu }) => {
           <div className="row">
             <div className="home-info padd-15">
               <h3 className="hello">
-                Hey there, I'm <span className="name">Zeeshan</span>
+                Hey there, I'm
+                {' '}
+                <span className="name">Zeeshan</span>
               </h3>
               <h3 className="my-profession">
-                I'm a{" "}
+                I'm a
+                {' '}
                 <span className="typing" ref={el}>
                   Web Developer
                 </span>
