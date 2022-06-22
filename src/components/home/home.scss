@@ -1,0 +1,99 @@
+@use "../../variables/variables" as *;
+
+.home-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  color: $text-black-900;
+}
+
+.home-info {
+  flex: 0 0 55%;
+  max-width: 55%;
+
+  @include mq("lg", "max") {
+    flex: 0 0 100%;
+    max-width: 100%;
+    text-align: center;
+  }
+}
+
+.social-links {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 50px;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+
+  @include mq("sm", "max") {
+    gap: 30px;
+  }
+
+  li {
+    a {
+      color: $text-black-700;
+      font-size: 30px;
+
+      &:hover {
+        color: $text-skin;
+      }
+
+      @include mq("sm", "max") {
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+.home-img {
+  flex: 0 2 40%;
+  max-width: 40%;
+  position: relative;
+  text-align: center;
+
+  @include mq("lg", "max") {
+    display: none;
+  }
+
+  img {
+    height: 300px;
+    border-radius: 30px;
+    margin: auto;
+  }
+}
+
+.hello {
+  font-size: 28px;
+  margin: 15px 0;
+  word-spacing: 2px;
+}
+
+.hello span {
+  font-family: $font-dancing;
+  font-size: 30px;
+  font-weight: 700;
+  color: $text-skin;
+}
+
+.my-profession {
+  font-size: 30px;
+  margin: 15px 0;
+
+  @include mq("sm", "max") {
+    font-size: 18px;
+  }
+}
+
+.typing {
+  color: $text-skin;
+}
+
+.home-info p {
+  margin-bottom: 70px;
+  font-size: 18px;
+  color: $text-black-700;
+}

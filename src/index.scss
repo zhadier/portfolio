@@ -1,0 +1,192 @@
+@use "./variables/variables" as *;
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  line-height: 1.5;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  text-decoration: none;
+}
+
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+body {
+  line-height: 1.8;
+  font-family: $font-raleway;
+  background: url(./images/pattern.svg);
+  background-color: $bg-black-900;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 500;
+  font-family: $font-roboto;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+.hidden {
+  display: none !important;
+}
+
+canvas {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+}
+
+section {
+  position: absolute;
+  min-height: 100vh;
+  top: 0;
+  right: 0;
+  left: 270px;
+  transition: all 0.4s ease-in-out;
+  padding: 10px 50px;
+  overflow: auto;
+
+  @include mq("xl", "max") {
+    left: 0;
+  }
+
+  @include mq("md", "max") {
+    padding: 10px 30px;
+  }
+
+  @include mq("", "max") {
+    padding: 10px;
+  }
+
+  @include slide-section;
+}
+
+section.open {
+  left: 270px;
+
+  @include mq("lg", "max") {
+    left: 0;
+  }
+}
+
+.padd-15 {
+  padding: 0 15px;
+}
+
+.shadow-dark {
+  box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.section-title {
+  flex: 0 0 100%;
+  max-width: 100%;
+  margin-bottom: 60px;
+
+  h2 {
+    font-size: 40px;
+    font-weight: 500;
+    position: relative;
+    color: $text-black-700;
+
+    @include mq("sm", "max") {
+      font-size: 30px;
+    }
+
+    &::before {
+      content: "";
+      height: 4px;
+      width: 50px;
+      background-color: $text-skin;
+      position: absolute;
+      top: 100%;
+      left: 0;
+    }
+
+    &::after {
+      content: "";
+      height: 4px;
+      width: 25px;
+      background-color: $text-skin;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      margin-top: 8px;
+    }
+  }
+}
+
+.btn {
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 1rem 3rem;
+  letter-spacing: 0.3rem;
+  font-family: $font-league;
+  cursor: pointer;
+  position: relative;
+  z-index: 5;
+  color: $text-black-900;
+  border: 2px solid $bg-black-50;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: all 500ms cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.btn::before,
+.btn::after {
+  content: "";
+  position: absolute;
+  transition: inherit;
+  z-index: -1;
+  left: 0;
+  height: 0;
+  width: 100%;
+}
+
+.btn:hover {
+  color: $text-skin;
+  transition-delay: 0.5s;
+}
+
+.btn::before {
+  bottom: 0;
+  border: 1px solid white;
+  border-top: 0;
+  border-bottom: 0;
+}
+
+.btn::after {
+  top: 0;
+  height: 0;
+}
+
+.btn:hover::before,
+.btn:hover::after {
+  height: 100%;
+}
+
+.btn:hover::before {
+  transition-delay: 0s;
+}
+
+.btn:hover::after {
+  background: white;
+  transition-delay: 0.35s;
+}
