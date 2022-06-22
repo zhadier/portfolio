@@ -21,7 +21,8 @@ body {
   font-family: $font-raleway;
   background: url(./images/pattern.svg);
   background-color: $bg-black-900;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 h1,
@@ -49,7 +50,7 @@ canvas {
 
 section {
   position: absolute;
-  height: 100vh;
+  min-height: 100vh;
   top: 0;
   right: 0;
   left: 270px;
