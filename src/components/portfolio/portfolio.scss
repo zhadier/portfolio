@@ -164,8 +164,9 @@
       }
 
       &:hover {
-        color: var(--def);
         transition-delay: 0.5s;
+        color: $bg-black-900;
+        opacity: 1;
 
         &::before {
           transition-delay: 0s;
@@ -183,11 +184,6 @@
       width: 100%;
       position: absolute;
       bottom: -120px;
-
-      &:hover {
-        color: $bg-black-900;
-        opacity: 1;
-      }
     }
 
     .portfolio-item-inner:hover .project-button {
