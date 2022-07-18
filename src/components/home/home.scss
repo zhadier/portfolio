@@ -7,6 +7,11 @@
   color: $text-black-900;
 }
 
+button {
+  background: none;
+  height: auto;
+}
+
 .home-info {
   flex: 0 0 55%;
   max-width: 55%;

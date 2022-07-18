@@ -2,12 +2,12 @@ import React, { useState, useRef } from 'react';
 import './portfolio.scss';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
-import eme from '../../images/EmeOlympiad.png';
-import rut from '../../images/RentUrTech.png';
-import ram from '../../images/RentAMovie.png';
-import st from '../../images/SpaceTravellers.png';
-import ba from '../../images/BudTab.png';
-import tz from '../../images/TwoZero.png';
+import eme from '../../assets/images/EmeOlympiad.png';
+import rut from '../../assets/images/RentUrTech.png';
+import ram from '../../assets/images/RentAMovie.png';
+import st from '../../assets/images/SpaceTravellers.png';
+import ba from '../../assets/images/BudTab.png';
+import tz from '../../assets/images/TwoZero.png';
 import Modal from '../modal/Modal';
 
 const Portfolio = ({ menu }) => {

@@ -7,7 +7,6 @@
   outline: 0;
   line-height: 1.5;
   box-sizing: border-box;
-  scroll-behavior: smooth;
   text-decoration: none;
 }
 
@@ -19,7 +18,7 @@
 body {
   line-height: 1.8;
   font-family: $font-raleway;
-  background: url(./images/pattern.svg);
+  background: url(./assets/images/pattern.svg);
   background-color: $bg-black-900;
   overflow-x: hidden;
   overflow-y: auto;

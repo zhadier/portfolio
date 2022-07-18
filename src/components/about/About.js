@@ -1,6 +1,7 @@
 import { BsCalendar2Date } from 'react-icons/bs';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
+import Resume from '../../assets/resume/Zeeshan_Resume.pdf';
 import './about.scss';
 
 const About = ({ menu }) => {
@@ -41,56 +42,56 @@ const About = ({ menu }) => {
             <div className="row" data-aos="fade-in">
               <div className="personal-info padd-15">
                 <div className="row">
-                  <div className="info-item padd-15">
+                  <div className="info-item padd-15" data-aos="fade-in">
                     <p>
-                      Birthday :
+                      Alias :
                       {' '}
-                      <span>12 Nov 1998</span>
+                      <span>zhadier</span>
                     </p>
                   </div>
-                  <div className="info-item padd-15">
+                  <div className="info-item padd-15" data-aos="fade-in">
                     <p>
                       Age :
                       {' '}
-                      <span>23</span>
+                      <span>As old as the Universe</span>
                     </p>
                   </div>
-                  <div className="info-item padd-15">
+                  <div className="info-item padd-15" data-aos="fade-in">
                     <p>
                       Website :
                       {' '}
                       <span>github.com/zhadier</span>
                     </p>
                   </div>
-                  <div className="info-item padd-15">
+                  <div className="info-item padd-15" data-aos="fade-in">
                     <p>
                       Email :
                       {' '}
                       <span>zhadier39@gmail.com</span>
                     </p>
                   </div>
-                  <div className="info-item padd-15">
+                  <div className="info-item padd-15" data-aos="fade-in">
                     <p>
                       Degree :
                       {' '}
                       <span>Electrical Engineering</span>
                     </p>
                   </div>
-                  <div className="info-item padd-15">
+                  <div className="info-item padd-15" data-aos="fade-in">
                     <p>
                       Certifications :
                       {' '}
                       <span>Full Stack Developer</span>
                     </p>
                   </div>
-                  <div className="info-item padd-15">
+                  <div className="info-item padd-15" data-aos="fade-in">
                     <p>
                       Phone :
                       {' '}
                       <span>+92-3328331524</span>
                     </p>
                   </div>
-                  <div className="info-item padd-15">
+                  <div className="info-item padd-15" data-aos="fade-in">
                     <p>
                       Hobbies :
                       {' '}
@@ -101,7 +102,8 @@ const About = ({ menu }) => {
                 <div className="row" data-aos="fade-in">
                   <div className="buttons">
                     <a
-                      href="https://drive.google.com/file/d/1k5943aYP9OPyVKhgvir1tuSFmNGrH9L4/view?usp=sharing"
+                      href={Resume}
+                      download
                       className="btn"
                       target="_blank"
                       rel="noreferrer"
@@ -111,9 +113,9 @@ const About = ({ menu }) => {
                   </div>
                 </div>
               </div>
-              <div className="skills padd-15" data-aos="fade-in">
+              <div className="skills padd-15">
                 <div className="row">
-                  <div className="skill-item">
+                  <div className="skill-item" data-aos="fade-in">
                     <h3>React</h3>
                     <div className="progress">
                       <div
@@ -123,7 +125,7 @@ const About = ({ menu }) => {
                       <div className="skill-percent">80%</div>
                     </div>
                   </div>
-                  <div className="skill-item">
+                  <div className="skill-item" data-aos="fade-in">
                     <h3>Rails</h3>
                     <div className="progress">
                       <div
@@ -156,8 +158,8 @@ const About = ({ menu }) => {
                 </div>
               </div>
             </div>
-            <div className="row" data-aos="fade-in">
-              <div className="education padd-15">
+            <div className="row">
+              <div className="education padd-15" data-aos="fade-in">
                 <h3 className="title">Education</h3>
                 <div className="row">
                   <div className="timeline-box">
@@ -207,7 +209,7 @@ const About = ({ menu }) => {
                   </div>
                 </div>
               </div>
-              <div className="experience padd-15">
+              <div className="experience padd-15" data-aos="fade-in">
                 <h3 className="title">Experience</h3>
                 <div className="row">
                   <div className="timeline-box">

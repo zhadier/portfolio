@@ -14,17 +14,10 @@
 }
 
 .modal-wrapper {
-  padding: 10px 20px 40px 20px;
+  position: relative;
   width: 80%;
   max-width: 1100px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  box-shadow: 0 0 5px;
-  color: $text-black-900;
-  background: url(../../images/bgpattern1.svg), $bg-black-100;
-  position: relative;
-  border-radius: 0 0 20px 20px;
+  max-height: 90vh;
 
   .modal-close {
     cursor: pointer;
@@ -46,91 +39,107 @@
     }
   }
 
-  .modal-image {
-    flex: 0 0 20%;
-    object-fit: contain;
-    position: relative;
-
-    img {
-      border-radius: 20px;
-      width: 100%;
-      height: 100%;
-    }
-  }
-
-  .modal-links {
-    display: flex;
-    gap: 20px;
-    justify-content: flex-end;
-    margin-top: 30px;
-
-    @include mq("sm", "max") {
-      flex-direction: column;
-    }
-
-    a {
-      font-weight: 600;
-      background: $bg-black-900;
-      letter-spacing: 0.2rem;
-      padding: 7px 25px;
-      border-radius: 5px;
-
-      @include mq("sm", "max") {
-        font-size: 12px;
-        display: flex;
-        gap: 15px;
-        justify-content: center;
-        align-items: center;
-      }
-    }
-  }
-
-  .modal-content {
-    padding: 0 5%;
-    gap: 15px;
+  .inner-wrapper {
+    padding: 10px 20px 40px 20px;
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
+    overflow-y: auto;
+    gap: 20px;
+    box-shadow: 0 0 5px;
+    color: $text-black-900;
+    background: url(../../assets/images/bgpattern1.svg), $bg-black-100;
+    position: relative;
+    border-radius: 0 0 20px 20px;
 
-    @include mq("sm", "max") {
-      text-align: center;
+    .modal-image {
+      flex: 0 0 20%;
+      align-self: center;
+      object-fit: contain;
+      position: relative;
+
+      img {
+        border-radius: 20px;
+        width: 100%;
+        height: 100%;
+      }
     }
 
-    h3 {
-      font-family: $font-league;
-      font-size: 1.4rem;
-    }
-
-    ul {
-      list-style: none;
+    .modal-links {
       display: flex;
-      gap: 10px;
+      gap: 20px;
+      justify-content: flex-end;
+      margin-top: 30px;
 
       @include mq("sm", "max") {
-        justify-content: center;
+        flex-direction: column;
       }
 
-      li {
-        font-size: 12px;
-        font-style: italic;
-        color: $text-skin;
-        border: 1px solid $text-black-900;
-        border-radius: 20px;
-        padding: 4px 20px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+      a {
+        font-weight: 600;
+        background: $bg-black-900;
+        letter-spacing: 0.2rem;
+        padding: 7px 25px;
+        border-radius: 5px;
 
-        @include mq("sm", "max") {
-          font-size: 8px;
+        @include mq("md", "max") {
+          font-size: 12px;
+          display: flex;
+          gap: 15px;
+          justify-content: center;
+          align-items: center;
         }
       }
     }
 
-    p {
+    .modal-content {
+      padding: 0 5%;
+      gap: 15px;
+      display: flex;
+      flex-direction: column;
+
       @include mq("sm", "max") {
-        max-height: 100px;
-        overflow: scroll;
-        font-size: 12px;
+        text-align: center;
+      }
+
+      h3 {
+        font-family: $font-league;
+        font-size: 1.4rem;
+      }
+
+      ul {
+        list-style: none;
+        display: flex;
+        gap: 10px;
+
+        @include mq("sm", "max") {
+          justify-content: center;
+        }
+
+        li {
+          font-size: 12px;
+          font-style: italic;
+          color: $text-skin;
+          border: 1px solid $text-black-900;
+          border-radius: 20px;
+          padding: 4px 20px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          @include mq("sm", "max") {
+            font-size: 8px;
+          }
+        }
+      }
+
+      p {
+        @include mq("sm", "max") {
+          overflow: auto;
+          max-height: 100px;
+          font-size: 12px;
+        }
       }
     }
   }

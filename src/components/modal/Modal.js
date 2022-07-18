@@ -28,39 +28,41 @@ const Modal = ({ showModal, setShowModal, currentProject }) => {
           >
             <AiOutlineClose />
           </button>
-          <div className="modal-image">
-            <img src={currentProject.image} alt="project screenshot" />
-          </div>
-          <div className="modal-content">
-            <h3>{currentProject.name}</h3>
-            <ul>
-              {currentProject.techs.map((tech) => (
-                <li key={tech}>{tech}</li>
-              ))}
-            </ul>
-            <p>{currentProject.description}</p>
+          <div className="inner-wrapper">
+            <div className="modal-image">
+              <img src={currentProject.image} alt="project screenshot" />
+            </div>
+            <div className="modal-content">
+              <h3>{currentProject.name}</h3>
+              <ul>
+                {currentProject.techs.map((tech) => (
+                  <li key={tech}>{tech}</li>
+                ))}
+              </ul>
+              <p>{currentProject.description}</p>
 
-            <div className="modal-links">
-              <a
-                target="_blank"
-                className="btn"
-                href={currentProject.linkToLiveVersion}
-                rel="noreferrer"
-              >
-                See Live
-                {' '}
-                <HiOutlineExternalLink className="live-link" />
-              </a>
-              <a
-                target="_blank"
-                className="btn"
-                href={currentProject.linkToSource}
-                rel="noreferrer"
-              >
-                See Source
-                {' '}
-                <AiOutlineGithub className="live-link" />
-              </a>
+              <div className="modal-links">
+                <a
+                  target="_blank"
+                  className="btn"
+                  href={currentProject.linkToLiveVersion}
+                  rel="noreferrer"
+                >
+                  See Live
+                  {' '}
+                  <HiOutlineExternalLink className="live-link" />
+                </a>
+                <a
+                  target="_blank"
+                  className="btn"
+                  href={currentProject.linkToSource}
+                  rel="noreferrer"
+                >
+                  See Source
+                  {' '}
+                  <AiOutlineGithub className="live-link" />
+                </a>
+              </div>
             </div>
           </div>
         </div>

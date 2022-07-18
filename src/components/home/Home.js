@@ -3,7 +3,7 @@ import { AiOutlineLinkedin } from 'react-icons/ai';
 import { FaAngellist, FaGithub, FaMedium } from 'react-icons/fa';
 import Typed from 'typed.js';
 import './home.scss';
-import logo from '../../images/me.jpg';
+import logo from '../../assets/images/me.jpg';
 import BgCanvas from '../bg-canvas/BgCanvas';
 
 const Home = ({ menu }) => {
@@ -67,9 +67,7 @@ const Home = ({ menu }) => {
               <h3 className="my-profession">
                 I'm a
                 {' '}
-                <span className="typing" ref={el}>
-                  Web Developer
-                </span>
+                <span className="typing" ref={el} />
               </h3>
               <p>
                 I can help you build a product , feature or website. Look
@@ -77,14 +75,11 @@ const Home = ({ menu }) => {
                 and have a project you need coded, don’t hestiate to contact me.
               </p>
 
-              <a
-                href="#contact"
+              <button
+                type="button"
                 className="btn hire-me"
                 onTouchStart={() => {
-                  mouseDown.current = true;
-                }}
-                onTouchEnd={() => {
-                  mouseDown.current = true;
+                  mouseDown.current = !mouseDown.current;
                 }}
                 onMouseDown={() => {
                   mouseDown.current = true;
@@ -94,7 +89,7 @@ const Home = ({ menu }) => {
                 }}
               >
                 Warp
-              </a>
+              </button>
             </div>
             <div className="home-img padd-15">
               <img src={logo} alt="" />

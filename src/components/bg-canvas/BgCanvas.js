@@ -73,14 +73,6 @@ const BgCanvas = ({ mouseDown }) => {
     }
   };
 
-  // const handleMouseDown = () => {
-  //   mouseDown.current = true;
-  // };
-
-  // const handleMouseUp = (e) => {
-  //   mouseDown.current = false;
-  // };
-
   useEffect(() => {
     canvas = canvasRef.current;
     context = canvas.getContext('2d');
@@ -98,8 +90,6 @@ const BgCanvas = ({ mouseDown }) => {
 
   return (
     <canvas
-      // onMouseDown={handleMouseDown}
-      // onMouseUp={handleMouseUp}
       ref={canvasRef}
     />
   );
