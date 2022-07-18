@@ -9,7 +9,7 @@
 
 ## Deployment
 
-You can find the app [live link here](https://portfolio-zhadier.netlify.app/)
+You can find the app [live link here](https://zhadier.me/)
 
 ## Built With
 
