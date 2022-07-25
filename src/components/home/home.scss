@@ -12,6 +12,13 @@ button {
   height: auto;
 }
 
+.hire-me {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
 .home-info {
   flex: 0 0 55%;
   max-width: 55%;
