@@ -79,7 +79,10 @@ const Home = ({ menu }) => {
                 type="button"
                 className="btn hire-me"
                 onTouchStart={() => {
-                  mouseDown.current = !mouseDown.current;
+                  mouseDown.current = true;
+                }}
+                onTouchEnd={() => {
+                  mouseDown.current = false;
                 }}
                 onMouseDown={() => {
                   mouseDown.current = true;
